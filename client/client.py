@@ -21,4 +21,6 @@ while True:
         break
     except Exception as e:
         print(f"Wystąpił błąd: {e}")
+        with open('log.txt', 'w') as f:
+            f.writelines(e)
         time.sleep(5)
