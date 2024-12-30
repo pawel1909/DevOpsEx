@@ -12,7 +12,7 @@ while i < 20:
     decodedContent = encodeContent.decode("utf8")
 
     print(decodedContent)
-    with open('data.txt', 'r') as f:
+    with open('data.txt', 'w') as f:
         f.writelines(decodedContent)
     time.sleep(15)
     i += 1
