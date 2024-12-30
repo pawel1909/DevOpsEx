@@ -2,7 +2,7 @@ import requests
 import time
 
 # Wysyłanie przykładowych danych do serwera
-url = 'http://localhost:5000/data'
+url = 'http://flask_server:5000/data'
 i = 0
 
 while True:
