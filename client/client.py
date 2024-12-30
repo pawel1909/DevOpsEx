@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
 
 import urllib.request
+import time
 
-fp = urllib.request.urlopen("http://localhost:1234/")
+while True:
+    try:
+        # Wysyłanie zapytania do serwera
+        fp = urllib.request.urlopen("http://localhost:1234/")
+        encodeContent = fp.read()
+        decodedContent = encodeContent.decode("utf8")
 
-encodeContent = fp.read()
-decodedContent = encodeContent.decode("utf8")
+        print(decodedContent)
+        fp.close()
 
-print(decodedContent)
+        # Odczekanie 5 sekund przed kolejnym zapytaniem
+        time.sleep(5)
 
-
-
-fp.close()
+    except KeyboardInterrupt:
+        print("Zatrzymano klienta.")
+        break
+    except Exception as e:
+        print(f"Wystąpił błąd: {e}")
+        time.sleep(5)
