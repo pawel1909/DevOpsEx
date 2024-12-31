@@ -5,13 +5,13 @@ services:
     build:
       context: ./server_a
     ports:
-      - "5000:5000"  # Opcjonalnie wystawiamy port na zewnątrz
+      - "5001:5000"  # Opcjonalnie wystawiamy port na zewnątrz
 
   server_b:
     build:
       context: ./server_b
     ports:
-      - "5000:5000"  # Opcjonalnie wystawiamy port na zewnątrz
+      - "5002:5000"  # Opcjonalnie wystawiamy port na zewnątrz
 
   main_server:
     build:
